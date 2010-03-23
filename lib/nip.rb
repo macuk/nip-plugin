@@ -38,7 +38,6 @@ class Nip
         sum += (d * weights[i])
         i += 1
       end
-      ctrl = (sum % 11) % 10
-      ctrl == digits[-1]
+      (sum % 11) % 10 == digits[-1]
     end
 end
