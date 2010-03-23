@@ -3,7 +3,10 @@ Nip
 
 This plugin provides the Nip class to check the NIP number.
 
-TODO - prepare note about NIP number
+NIP (Numer Identyfikacji Podatkowej) is the Polish Tax Identification Number. 
+
+More information (in Polish language):
+http://pl.wikipedia.org/wiki/NIP
 
 Installation
 ============
@@ -16,8 +19,8 @@ Example
 Standalone class:
 
   nip = Nip.new('845-167-08-82')
-  nip.valid? # true
-  nip.number # '8451670882'
+  nip.valid?  # true
+  nip.to_s    # '8451670882'
 
 ActiveRecord:
 
