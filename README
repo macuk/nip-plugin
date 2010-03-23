@@ -1,0 +1,36 @@
+Nip
+===
+
+This plugin provides the Nip class to check the NIP number.
+
+TODO - prepare note about NIP number
+
+Installation
+============
+
+script/plugin install git://github.com/macuk/nip.git
+
+Example
+=======
+
+Standalone class:
+
+  nip = Nip.new('845-167-08-82')
+  nip.valid? # true
+  nip.number # '8451670882'
+
+ActiveRecord:
+
+  class Company < ActiveRecord::Base
+    validate :check_nip
+
+    private
+      def check_nip
+        n = Nip.new(nip)
+        message = 'Invalid NIP number'
+        errors.add(:nip, message) unless n.valid?
+      end
+  end
+
+
+Copyright (c) 2010 Piotr Macuk, released under the MIT license
